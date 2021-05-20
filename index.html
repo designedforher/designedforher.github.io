@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Designed for her</title>
+    <style>
+        html, body{
+            overflow:hidden;
+            position: relative;
+            height: 100%;
+            margin:0;
+        }
+
+        .jia-you{
+            position: absolute;
+            text-align:center;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin:0;
+            font-family: sans-serif;
+            color:#FFF;
+            width:80vw;
+            height:auto;
+        }
+        .jia-title{
+            font-size:42pt;
+        }
+        .jia-sub{
+            font-size:16pt;
+        }
+        .jia-count{
+            display: inline-block;
+            font-size:32pt;
+            animation: wiggle 800ms;
+            animation-iteration-count:infinite;
+        }
+
+        @keyframes wiggle { 
+            0% { transform:rotate(25deg)}
+            50% { transform:rotate(-25deg) }
+            100% { transform:rotate(25deg) }
+        }
+
+        .credits{
+            position:absolute;
+            font-family: sans-serif;
+            bottom:-2px;
+            font-size:14px;
+            background-color:#fff;
+            border-radius:15px 15px 0 0;
+            width:200px;
+            padding:0px 10px;
+            border:2px solid pink;
+            text-align:center;
+            margin:0;
+            left:50%;
+            transform: translateX(-50%);
+        }
+
+        .credits span{
+            color:#ff5555;
+        }
+    </style>
+</head>
+<body>
+    <div style="position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); width:500px; height:500px; border-radius:100%; background-color: pink;"></div>
+    <div>
+        <img src="res/jiayou3.gif" style="position:absolute; width:250px; height:auto; bottom:-32px; left:50%; transform:translateX(-50%);">
+        <img src="res/jiayou2.gif" style="position:absolute; width:120px; height:auto; left:15px; top:20px; transform:rotate(0deg)">
+        <img src="res/jiayou4.gif" style="position:absolute; width:130px; height:auto; right:-25px; top:-25px; transform:rotate(-135deg)">
+    </div>
+<div class="jia-you">
+    <h2 class=" jia-title">Cherie<br/>加油!</h2>
+    <h3 class="jia-sub">There are only <span class="jia-count" id="days"></span> days left to the end of the quarantine!</h3>
+    <img src="res/jiayou1.gif" style="text-align:center; width:150px; height:auto; transform:translateY(-10px)">
+</div>
+    <p class="credits">made by your babbasuni <span>&#10084;</span></p>
+<script>
+    var myfunc = setInterval(function() {
+        var countDownDate = new Date("May 30, 2021 16:00:00").getTime();
+        var now = new Date().getTime();
+    var timeleft = countDownDate - now;
+    
+    var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+
+    document.getElementById("days").innerHTML = days;
+    }, 1000);
+</script>
+</body>
+</html>
